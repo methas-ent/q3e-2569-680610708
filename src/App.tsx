@@ -38,19 +38,6 @@ export default function App() {
             <AddItemDialog />
           </div>
 
-          {/* <Tabs defaultValue="preview">
-            <TabsList>
-              <TabsTrigger value="preview">
-                <AppWindowIcon />
-
-                Overview
-              </TabsTrigger>
-              <TabsTrigger value="code">
-                <CodeIcon />
-                By catagory
-              </TabsTrigger>
-            </TabsList>
-          </Tabs> */}
 
           <div>
             <Tabs value={activeTab} onValueChange={setActiveTab}>
@@ -76,8 +63,7 @@ export default function App() {
 
           {/* Put OverviewCards and CategoryCards under DashboardTabs */}
           {/* And then use DashboardTabs here instead */}
-          {/* <CategoryCards />
-          <OverviewCards /> */}
+
           <ItemList />
         </div>
       </main>

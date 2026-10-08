@@ -12,8 +12,9 @@ import {
 } from "@/components/ui/table";
 import { Trash } from "lucide-react";
 
+
 export function ItemList() {
-  const { expenses } = useItemStore();
+  const { expenses, addExpense, } = useItemStore();
 
   return (
     <Card>
@@ -43,30 +44,34 @@ export function ItemList() {
               </TableRow>
             ) : (
               // replace the following hardcoded row with the dynamic mapping of data items
-              <TableRow>
-                <TableCell className="text-muted-foreground">
-                  2026-10-05
-                </TableCell>
-                <TableCell className="font-medium">ซื้อของ 7-11</TableCell>
-                <TableCell>
-                  <Badge variant="outline">Food</Badge>
-                </TableCell>
-                <TableCell className="text-right font-semibold">฿120</TableCell>
-                <TableCell className="text-right">
-                  <Button
-                    className="text-white bg-red-500 hover:bg-red-600 text-white"
-                    variant="ghost"
-                    size="sm"
-                  >
-                    <Trash className="h-4 w-4" />
-                    Delete
-                  </Button>
-                </TableCell>
-              </TableRow>
+              expenses.map((expense) => (
+                < TableRow >
+                  <TableCell className="text-muted-foreground">
+                    {/* 2026-10-05 */}
+                    {expense.date}
+                  </TableCell>
+                  <TableCell className="font-medium">{expense.title}</TableCell>
+                  <TableCell>
+                    <Badge variant="outline">{expense.category}</Badge>
+                  </TableCell>
+                  <TableCell className="text-right font-semibold">฿{expense.amount}</TableCell>
+                  <TableCell className="text-right">
+                    <Button
+                      className="text-white bg-red-500 hover:bg-red-600 text-white"
+                      variant="ghost"
+                      size="sm"
+                    >
+                      <Trash className="h-4 w-4" />
+                      Delete
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))
+
             )}
           </TableBody>
         </Table>
       </CardContent>
-    </Card>
+    </Card >
   );
 }
