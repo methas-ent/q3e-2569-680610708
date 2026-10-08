@@ -30,7 +30,7 @@ export function StudentInfo() {
     // </div>
 
     <Drawer swipeDirection="left">
-      <DrawerTrigger render={<Button variant="secondary">Methas Naisoo</Button>} />
+      <DrawerTrigger render={<Button variant="secondary" className="bg-blue-600 hover:bg-blue-700 text-white">Methas Naisoo</Button>} />
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>ข้อมูลนักศึกษา</DrawerTitle>
