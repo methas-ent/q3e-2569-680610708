@@ -12,7 +12,7 @@ export function OverviewCards() {
           <CardTitle className="text-sm font-medium">Total Spent</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="text-2xl text-red-500 font-bold">฿...</div>
+          <div className="text-2xl text-red-500 font-bold">฿</div>
         </CardContent>
       </Card>
       <Card>
